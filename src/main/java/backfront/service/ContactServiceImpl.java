@@ -39,7 +39,7 @@ import java.util.stream.Collectors;
             Users user =Users.builder()
                     .fullName(contactDto.getFullName())
                     .email(contactDto.getEmail())
-                    .createdDate(LocalDateTime.now())
+                    .localDateTime(LocalDateTime.now())
                     .build();
 
             List<Phone_numbers> phoneNumbers = getPhoneNumbersFromContactDto(contactDto, user);
@@ -70,7 +70,7 @@ import java.util.stream.Collectors;
                     .id(user.getId())
                     .fullName(contactDto.getFullName())
                     .email(contactDto.getEmail())
-                    .createdDate(user.getCreatedDate())
+                    .localDateTime(user.getLocalDateTime())
                     .build();
 
             List <Phone_numbers> phoneNumbersToChange = getPhoneNumbersFromContactDto(contactDto, user);
@@ -182,7 +182,7 @@ import java.util.stream.Collectors;
             Phone_numbers phoneNumberFromDB = phoneNumberRepository.findPhoneNumberByPhoneNumber(phone)
                     .orElse(Phone_numbers.builder()
                             .id(0l)
-                            .createdDate(LocalDateTime.now())
+                            .localDateTime(LocalDateTime.now())
                             .phoneNumber(phone)
                             .user(new ArrayList <>())
                             .build());
