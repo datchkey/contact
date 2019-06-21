@@ -7,7 +7,6 @@ import lombok.*;
 @Getter
 @Setter
 @Builder
-
 public class AddressDto {
 
     private String country;
